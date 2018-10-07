@@ -6,38 +6,135 @@
 
 // *****************
 
-.header{
-    width:100%;
-    height:4.375rem;
+.header {
+    width: 100%;
+    height: 4.375rem;
     background: #fff;
-    &__wrapper{
-        width:$container_lg;
-        height:100%;
-        margin:0 auto;
-        display:flex;
+
+    &__wrapper {
+        width: $container_lg;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
         align-items: center;
         justify-content: space-between;
-        .header__img{
-            width:7.5rem;
-            height:3.125rem;
+
+        .header__img {
+            width: 7.5rem;
+            height: 3.125rem;
         }
-        .header__navigation{
-            width:calc(100% - 150px);
-            justify-content:space-around;
-            margin-left:7.5rem;
-            &-list{
-                display:flex;
+
+        .header__navigation {
+            width: 85%;
+            justify-content: space-around;
+            margin-left: 7.5rem;
+            height: 100%;
+
+            &-list {
+                display: flex;
                 list-style: none;
                 justify-content: space-between;
-                a{
-                    text-decoration: none;
-                    font-family: 'Open Sans', sans-serif;
-                    text-transform:uppercase;
-                    color:$link_color;
-                    font-weight:800;
-                    font-size:.875rem;
-                    padding-right:2rem;
+                margin: 0;
 
+                .header__navigation-item {
+                    &:hover {
+                        background: $link_item_hover_color;
+                    }
+
+                    a {
+                        @include linkItem;
+
+                        &:hover {
+                            color: $link_hover_color
+                        }
+                    }
+                }
+
+                .header__navigation-item--dropdown {
+                    position:relative;
+                    // &:after{
+                    //     content:'';
+                    //     position:absolute;
+                    //     top:32px;
+                    //     right:5px;
+                    //     width:7px;
+                    //     height:7px;
+                    //     background:$link_color;
+                    //     clip-path: polygon(50% 70%, 0 0, 100% 0);
+                    // }
+                    &:hover {
+                        background: $link_item_hover_color;
+                    }
+
+                    a {
+                        @include linkItem;
+                        &:after{
+                            content:'';
+                            position:absolute;
+                            top:32px;
+                            right:5px;
+                            width:7px;
+                            height:7px;
+                            background:$link_color;
+                            clip-path: polygon(50% 70%, 0 0, 100% 0);
+                        }
+
+                        &:hover {
+                            color: $link_hover_color;
+                            &:after{
+                                content:'';
+                                position:absolute;
+                                top:32px;
+                                right:5px;
+                                width:7px;
+                                height:7px;
+                                background:$link_hover_color;
+                                clip-path: polygon(50% 70%, 0 0, 100% 0);
+                            }
+                        }
+                    }
+                }
+
+                .header__navigation-item--ticket {
+                    display: flex;
+                    align-items: center;
+
+                    a {
+                        @extend %link;
+                        width: 7.1875rem;
+                        height: 1.875rem;
+                        line-height: 1.875rem;
+                        background: $link_hover_color;
+                        color: #fff;
+                        font-weight: 700;
+                        font-size: .875rem;
+
+                        &:hover {
+                            background: darken($link_hover_color, 10%)
+                        }
+                    }
+                }
+
+                .header__navigation-item--language-toggler {
+                    display: flex;
+                    align-items: center;
+                    margin-left: 20px;
+
+                    span {
+                        @include linkItem;
+                        border: 3px solid $link_item_hover_color;
+                        display: block;
+                        width: 1.875rem;
+                        height: 1.875rem;
+                        padding: 0;
+                        line-height: 1.875rem;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $link_hover_color;
+                            background: $link_item_hover_color;
+                        }
+                    }
                 }
             }
         }
