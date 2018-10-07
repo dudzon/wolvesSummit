@@ -5,3 +5,30 @@ $container_lg: 1199px;
 
 // HEADER
 $link_color:#251F50;
+$link_hover_color:#ef0060;
+$link_item_hover_color:#f4f4f4;
+
+//  LINKS
+
+@mixin linkItem {
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    text-transform:uppercase;
+    color:$link_color;
+    font-weight:800;
+    font-size:.875rem;
+    padding-right:2rem;
+    display: inline-block;
+    height: 4.375rem;
+    line-height: 4.375rem;
+    width: 100%;
+    text-align: center;
+}
+
+%link{
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    text-transform:uppercase;
+    width: 100%;
+    text-align: center;
+}
