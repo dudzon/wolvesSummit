@@ -18,6 +18,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding:0 10px;
 
         .header__img {
             width: 7.5rem;
@@ -159,6 +160,54 @@
                             background: $link_item_hover_color;
                         }
                     }
+                }
+            }
+        }
+    }
+}
+// Hidden botton menu
+.why-attend{
+    width:100%;
+    background: $link_item_hover_color;
+    &__container{
+        width:$container_lg;
+        margin:0 auto;
+        height:11.875rem;
+        display:flex;
+        padding:0 10px;
+        .why-attend__business,
+        .why-attend__startups,
+        .why-attend__investors,
+        .why-attend__last{
+            @extend %bottomMenuItem;
+            &>li:first-child{
+                color:$link_hover_color;
+                margin:1.75rem 0;
+                text-transform:uppercase;
+                font-family:'Open Sans',sans-serif;
+                font-size:1.25rem;
+            }
+            &>li a{
+                @extend %link;
+                color:$link_color;
+                font-weight:800;
+                font-size:1rem;
+                padding-bottom:10px;
+                display: inline-block;
+                text-align: initial;
+                position:relative;
+                width:initial;
+                &:after{
+                    content:'';
+                    position:absolute;
+                    background: url('../assets/arrow-right.png') no-repeat;
+                    height:10px;
+                    width:6px;
+                    top:5px;
+                    right:-15px;
+                }
+                &:hover{
+                    color:$link_hover_color;
                 }
             }
         }
