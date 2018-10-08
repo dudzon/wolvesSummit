@@ -35,7 +35,7 @@
                 list-style: none;
                 justify-content: space-between;
                 margin: 0;
-
+                height:100%;
                 .header__navigation-item {
                     &:hover {
                         background: $link_item_hover_color;
@@ -52,21 +52,12 @@
 
                 .header__navigation-item--dropdown {
                     position:relative;
-                    // &:after{
-                    //     content:'';
-                    //     position:absolute;
-                    //     top:32px;
-                    //     right:5px;
-                    //     width:7px;
-                    //     height:7px;
-                    //     background:$link_color;
-                    //     clip-path: polygon(50% 70%, 0 0, 100% 0);
-                    // }
+
                     &:hover {
                         background: $link_item_hover_color;
                     }
 
-                    a {
+                    > a {
                         @include linkItem;
                         &:after{
                             content:'';
@@ -92,6 +83,39 @@
                                 clip-path: polygon(50% 70%, 0 0, 100% 0);
                             }
                         }
+                    }
+                    .header__dropdown--agenda{
+                        list-style: none;
+                        padding:0;
+                        flex-direction: column;
+                        height:7.8125rem;
+                        justify-content: center;
+                        background:$link_item_hover_color;
+                        position:absolute;
+                        width:10rem;
+                        .header__dropdown-item{
+                            padding:0;
+                            height:1.875rem;
+                            margin-bottom:5px;
+                            a{
+                                @include linkItem;
+                                height:100%;
+                                line-height:1.875rem;
+                                padding:0;
+                                text-align: left;
+                                padding-left:15px;
+                                &:hover{
+                                    color: $link_hover_color;
+                                }
+
+                            }
+                        }
+                    }
+                    .dropdown--not-visible{
+                        display:none;
+                    }
+                    .dropdown--is-visible{
+                        display:flex;
                     }
                 }
 
