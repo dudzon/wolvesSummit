@@ -1,11 +1,12 @@
 const agenda = document.querySelectorAll('.header__navigation-item--dropdown')[1];
 const whyAttend = document.querySelectorAll('.header__navigation-item--dropdown')[0];
+const header = document.querySelector('.header');
 
 // Agenda dropdown menu
 agenda.addEventListener('click',function(){
 
+    isWhyAttendVisible(); // Close dropdown Why Attend if visible
     let hiddenMenu = this.children[1];
-
     if( hiddenMenu.classList.contains('dropdown--not-visible') ){
         this.style.backgroundColor = '#f4f4f4';
         hiddenMenu.classList.remove('dropdown--not-visible');
@@ -20,7 +21,6 @@ agenda.addEventListener('click',function(){
 // Why Attend dropdown menu
 
 whyAttend.addEventListener('click',function(e){
-    const header = document.querySelector('.header');
     const bottomMenu = document.createRange().createContextualFragment(`<section class="why-attend">
 <div class="why-attend__container">
     <ul class="why-attend__business">
@@ -46,13 +46,28 @@ whyAttend.addEventListener('click',function(e){
 </div>
 </section>`);
 
-    if( e.target.closest('.header').nextElementSibling.tagName !=='SECTION' ){
+    isAgendaVisible();  // Close dropdown Agenda if visible
+    if( e.target.closest('.header').nextElementSibling.tagName !=='SECTION'){
         this.style.background = '#f4f4f4';
         header.after(bottomMenu);
-    } else{
+    }
+    else{
         this.style.background = '#fff';
         e.target.closest('.header').parentElement.children[3].remove();
     }
 })
 
-
+// Helper function to determine if dropdown Agenda is visible
+function isAgendaVisible(){
+    agenda.children[1].classList.remove('dropdown--is-visible');
+    agenda.children[1].classList.add('dropdown--not-visible')
+    agenda.style.backgroundColor ='#fff';
+}
+// Helper function to determine if dropdown Why Attend is visible
+function isWhyAttendVisible(){
+    if( header.nextElementSibling.tagName === 'SECTION'){
+        let toRemove = header.nextElementSibling;
+        toRemove.parentElement.children[3].remove();
+        whyAttend.style.backgroundColor = '#fff';
+    }
+}
