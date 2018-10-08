@@ -47,13 +47,13 @@ whyAttend.addEventListener('click',function(e){
 </section>`);
 
     isAgendaVisible();  // Close dropdown Agenda if visible
-    if( e.target.closest('.header').nextElementSibling.tagName !=='SECTION'){
+    if( e.target.closest('.header').lastElementChild.tagName !=='SECTION'){
         this.style.background = '#f4f4f4';
-        header.after(bottomMenu);
+        header.appendChild(bottomMenu);
     }
     else{
         this.style.background = '#fff';
-        e.target.closest('.header').parentElement.children[3].remove();
+        e.target.closest('.header').lastElementChild.remove();
     }
 })
 
@@ -65,9 +65,9 @@ function isAgendaVisible(){
 }
 // Helper function to determine if dropdown Why Attend is visible
 function isWhyAttendVisible(){
-    if( header.nextElementSibling.tagName === 'SECTION'){
-        let toRemove = header.nextElementSibling;
-        toRemove.parentElement.children[3].remove();
+    if( header.lastElementChild.tagName === 'SECTION'){
+        let toRemove = header.lastElementChild;
+        toRemove.parentElement.lastElementChild.remove();
         whyAttend.style.backgroundColor = '#fff';
     }
 }

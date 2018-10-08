@@ -169,6 +169,8 @@
 .why-attend{
     width:100%;
     background: $link_item_hover_color;
+    z-index:200;
+    position:relative;
     &__container{
         width:$container_lg;
         margin:0 auto;
@@ -212,4 +214,11 @@
             }
         }
     }
+}
+// Heading bar
+.heading-bar{
+    width:100%;
+    height:11.875rem;
+    background:red;
+    z-index:1;
 }
