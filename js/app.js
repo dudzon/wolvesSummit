@@ -12,7 +12,7 @@ agenda.addEventListener('click',function(){
         hiddenMenu.classList.remove('dropdown--not-visible');
         hiddenMenu.classList.add('dropdown--is-visible');
     }else{
-        this.style.backgroundColor = '#fff';
+        this.style.background = '';
         hiddenMenu.classList.remove('dropdown--is-visible');
         hiddenMenu.classList.add('dropdown--not-visible');
     }
@@ -54,6 +54,7 @@ whyAttend.addEventListener('click',function(e){
     else{
         this.style.background = '#fff';
         e.target.closest('.header').lastElementChild.remove();
+        this.style.background = '';
     }
 })
 
@@ -61,13 +62,13 @@ whyAttend.addEventListener('click',function(e){
 function isAgendaVisible(){
     agenda.children[1].classList.remove('dropdown--is-visible');
     agenda.children[1].classList.add('dropdown--not-visible')
-    agenda.style.backgroundColor ='#fff';
+    agenda.style.background ='';
 }
 // Helper function to determine if dropdown Why Attend is visible
 function isWhyAttendVisible(){
     if( header.lastElementChild.tagName === 'SECTION'){
         let toRemove = header.lastElementChild;
         toRemove.parentElement.lastElementChild.remove();
-        whyAttend.style.backgroundColor = '#fff';
+        whyAttend.style.background = '';
     }
 }
