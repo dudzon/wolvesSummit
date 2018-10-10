@@ -165,6 +165,45 @@
                 }
             }
         }
+        .hamburger__icon{
+            width: 40px;
+            height: 30px;
+            flex-flow: column;
+            justify-content: space-around;
+            align-items: center;
+            display:none;
+            position: absolute;
+            right: 30px;
+            cursor:pointer;
+            span{
+                width: 90%;
+                height: 3px;
+                display:block;
+                background: #000;
+                -webkit-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+
+            }
+            &--active{
+                transform: rotate(90deg);
+                span:nth-child(2) {
+                    transition: none;
+                    opacity: 0;
+                }
+                span:nth-child(1),
+                span:nth-child(3) {
+                width: 25px;
+                transform-origin: right;
+                }
+                span:nth-child(1) {
+                transform: translateY(11px) rotate(45deg);
+                }
+                span:nth-child(3) {
+                transform: translateY(-11px) rotate(-45deg);
+                }
+            }
+        }
     }
 }
 
@@ -252,7 +291,53 @@
     }
 }
 @media screen and (max-width:1199px){
-    .header__navigation{
-        display:none;
+    .header{
+        .header__wrapper{
+            .header__navigation{
+                display:none;
+            }
+            .hamburger__icon{
+                display:flex;
+            }
+        }
+    }
+}
+@media screen and (max-width:1199px){
+    .header{
+        .header__wrapper{
+            width: $container_lg;
+        }
+    }
+}
+@media screen and (max-width:992px){
+    .header{
+        .header__wrapper{
+            width: $container_md;
+        }
+    }
+}
+@media screen and (max-width:768px){
+    .header{
+        .header__wrapper{
+            width: $container_sm;
+        }
+    }
+}
+@media screen and (max-width:620px){
+    .header{
+        .header__wrapper{
+            width: $container_xs;
+        }
+    }
+}
+@media screen and (max-width:499px){
+    .header{
+        .header__img{
+            width:4.5rem;
+            height:2rem;
+        }
+        .header__wrapper{
+            width:330px;
+        }
     }
 }

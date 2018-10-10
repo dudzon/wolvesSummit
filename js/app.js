@@ -1,6 +1,9 @@
 const agenda = document.body.querySelectorAll('.header__navigation-item--dropdown')[1];
 const whyAttend = document.body.querySelectorAll('.header__navigation-item--dropdown')[0];
 const header = document.body.querySelector('.header');
+const hamburger = document.body.querySelector('.hamburger__icon');
+const hamburgerBars = Array.from(hamburger.querySelectorAll('span'));
+
 
 
 // Agenda dropdown menu
@@ -10,6 +13,20 @@ agenda.addEventListener('click',handleAgenda,false)
 
 whyAttend.addEventListener('click',handleDownMenu,false)
 
+// Hover on hamburger icon
+
+hamburger.addEventListener('mouseenter',function(){
+    hamburgerBars.map( item => item.style.backgroundColor = '#ef0060');
+},false)
+hamburger.addEventListener('mouseleave',function(){
+    hamburgerBars.map( item => item.style.backgroundColor = '');
+},false)
+
+// Hamburger animation
+
+hamburger.addEventListener('click',function(){
+    this.classList.toggle('hamburger__icon--active');
+},false)
 // Helper function to determine if dropdown Agenda is visible
 function isAgendaVisible(){
     agenda.children[1].classList.remove('dropdown--is-visible');
@@ -80,3 +97,4 @@ function handleAgenda(){
         hiddenMenu.classList.add('dropdown--not-visible');
     }
 }
+
