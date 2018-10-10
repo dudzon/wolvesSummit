@@ -179,7 +179,7 @@
                 width: 90%;
                 height: 3px;
                 display:block;
-                background: #000;
+                background:$hamburger_color;
                 -webkit-transition: all 0.3s ease-in-out;
                 -o-transition: all 0.3s ease-in-out;
                 transition: all 0.3s ease-in-out;
@@ -190,11 +190,13 @@
                 span:nth-child(2) {
                     transition: none;
                     opacity: 0;
+                    background:$link_hover_color;
                 }
                 span:nth-child(1),
                 span:nth-child(3) {
                 width: 25px;
                 transform-origin: right;
+                background:$link_hover_color;
                 }
                 span:nth-child(1) {
                 transform: translateY(11px) rotate(45deg);
