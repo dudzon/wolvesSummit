@@ -1,6 +1,7 @@
-const agenda = document.querySelectorAll('.header__navigation-item--dropdown')[1];
-const whyAttend = document.querySelectorAll('.header__navigation-item--dropdown')[0];
-const header = document.querySelector('.header');
+const agenda = document.body.querySelectorAll('.header__navigation-item--dropdown')[1];
+const whyAttend = document.body.querySelectorAll('.header__navigation-item--dropdown')[0];
+const header = document.body.querySelector('.header');
+
 
 // Agenda dropdown menu
 agenda.addEventListener('click',function(){

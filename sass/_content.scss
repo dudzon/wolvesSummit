@@ -1,0 +1,136 @@
+@import 'variables';
+// *****************
+
+//  MAIN CONTENT STYLES
+
+// *****************
+
+.content{
+    width:100%;
+    height:auto;
+    margin-top:2rem;
+    .content__container{
+        width:$container_lg;
+        margin:0 auto;
+        height:100%;
+        display:flex;
+        .content__image{
+            width:40%;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            img{
+                height:70%;
+            }
+        }
+        .hbspt-form{
+            width:60%;
+            height:100%;
+            display:flex;
+            align-items: center;
+            form{
+                height:28.75rem;
+                width:26.875rem;
+                border:2px solid $link_hover_color;
+                margin:0 auto;
+                display:flex;
+                flex-direction:column;
+                font-family:'Open Sans',sans-serif;
+                position:relative;
+                .form-columns-2{
+                    width:90%;
+                    margin:2rem auto 0;
+                    .hs-firstname{
+                        label{
+                            display: inline-block;
+                            margin: 0 0 10px 40px;
+                        }
+                        .hs-input{
+                            width:10rem;
+                            border:1px solid #ccc;
+                            padding: 5px;
+                        }
+                    }
+                    .hs-lastname{
+                        label{
+                            display: inline-block;
+                            margin: 0 0 10px 40px;
+                        }
+                        .hs-input{
+                            width:10rem;
+                            border:1px solid #ccc;
+                            padding: 5px;
+                        }
+                    }
+
+                }
+                .form-columns-1{
+                    width:90%;
+                    margin:2rem auto 0;
+                    .hs-email{
+                       > label{
+                            display: inline-block;
+                            margin: 0 0 10px 140px;
+                        }
+                        .hs-input{
+                            border:1px solid #ccc;
+                            padding: 5px;
+                        }
+                        .hs-error-msgs{
+                            list-style: none;
+                            padding:0;
+                            li label{
+                                color:red;
+                            }
+                        }
+                    }
+                }
+                .form-columns-1{
+                    width:90%;
+                    .hs-form-field{
+                        .input{
+                            .inputs-list{
+                                list-style:none;
+                                padding:0;
+                                span{
+                                    padding-left:10px;
+                                    font-style: italic;
+                                }
+                            }
+                        }
+                    }
+                }
+                .hs_error_rollup{
+                    width:90%;
+                    margin: 0 auto;
+                    .hs-error-msgs{
+                        list-style: none;
+                        padding:0;
+                        li label{
+                            color:red
+                        }
+                    }
+                }
+                .hs_submit{
+                    width:90%;
+                    margin:0 auto;
+                    .actions{
+                        input{
+                            width:90%;
+                            height:2rem;
+                            color:#fff;
+                            background:#f00062;
+                            border:0;
+                            outline:0;
+                            height:2rem;
+                            text-transform: uppercase;
+                            position:absolute;
+                            bottom: 30px;
+                            left: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
