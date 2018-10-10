@@ -9,8 +9,6 @@
 .footer{
     width:100%;
     height:5.625rem;
-    position:fixed;
-    bottom:0;
     background-image: url('./../assets/bg-triangles-dark.png'),url('./../assets/bg-footer.png');
     background-position: top 10px left -30px , center;
     background-repeat: no-repeat,no-repeat;
@@ -22,13 +20,13 @@
         font-size:.75rem;
         margin-top:3.375rem;
         position :relative;
-        padding-top:10px;
+        padding-top:4.375rem;;
         &:before{
             content:'';
             position:absolute;
             width:100%;
             height:1px;
-            top:0;
+            top:60px;
             background:#ecececb0;
             opacity: .5;
         }
