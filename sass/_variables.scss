@@ -1,5 +1,10 @@
 // MAIN CONTAINER SIZE
-$container_lg: 1190px;
+$container_xl: 1170px;
+$container_lg: 890px;
+$container_md:750px;
+$container_sm:598px;
+$container_xs:440px;
+$container_xxs:299px;
 
 
 
@@ -23,7 +28,21 @@ $link_item_hover_color:#f4f4f4;
     line-height: 4.375rem;
     width: 100%;
     text-align: center;
+    cursor:pointer;
 }
+// FORM COLUMNS
+@mixin formColumnSize{
+    margin:0 auto;
+    width:80%;
+}
+@mixin columnBlock{
+    width:80%;
+    float:none;
+    margin:0 auto 10px;
+}
+// FONTS
+$fontSizeMd : .875rem;
+$fontSizeSm : .75rem;
 
 %link{
     text-decoration: none;
