@@ -132,6 +132,7 @@
                         font-weight: 700;
                         font-size: .875rem;
                         padding:0 10px;
+                        cursor:pointer;
                         &:hover {
                             background: darken($link_hover_color, 10%)
                         }
@@ -276,7 +277,7 @@
                 &:after{
                     content:'';
                     position:absolute;
-                    background: url('../assets/arrow-right.png') no-repeat;
+                    background: url('../assets/arrow-right1.png') no-repeat;
                     height:10px;
                     width:6px;
                     top:7px;
