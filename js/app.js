@@ -24,7 +24,7 @@ function isWhyAttendVisible(){
         whyAttend.style.background = '';
     }
 }
-//  Create  navigation down menu 
+//  Create  navigation down menu
 
 function createMenu(){
     const bottomMenu = document.createRange().createContextualFragment(`<section class="why-attend">
