@@ -3,15 +3,22 @@ const whyAttend = document.body.querySelectorAll('.header__navigation-item--drop
 const header = document.body.querySelector('.header');
 const hamburger = document.body.querySelector('.hamburger__icon');
 const hamburgerBars = Array.from(hamburger.querySelectorAll('span'));
+const mobileDropdown = Array.from(document.body.querySelectorAll('.header__navigation-item--dropdown-mobile'));
+const mobileMenu = document.querySelector('.header__navigation--mobile');
 
-
-
+console.log(mobileDropdown);
 // Agenda dropdown menu
 agenda.addEventListener('click',handleAgenda,false)
 
 // Why Attend dropdown menu
 
 whyAttend.addEventListener('click',handleDownMenu,false)
+
+// Show mobile dropdown
+
+for( let dropdown of mobileDropdown){
+    dropdown.addEventListener('click',showMobileDropdown,false)
+}
 
 // Hover on hamburger icon
 
@@ -26,7 +33,9 @@ hamburger.addEventListener('mouseleave',function(){
 
 hamburger.addEventListener('click',function(){
     this.classList.toggle('hamburger__icon--active');
+    mobileMenu.classList.toggle('header__navigation--mobile-open')
 },false)
+
 // Helper function to determine if dropdown Agenda is visible
 function isAgendaVisible(){
     agenda.children[1].classList.remove('dropdown--is-visible');
@@ -97,4 +106,12 @@ function handleAgenda(){
         hiddenMenu.classList.add('dropdown--not-visible');
     }
 }
-
+function showMobileDropdown(){
+    if (this.lastElementChild.classList.contains('dropdown--not-visible')){
+        this.lastElementChild.classList.remove('dropdown--not-visible');
+        this.lastElementChild.classList.add('dropdown--is-visible');
+    } else{
+        this.lastElementChild.classList.remove('dropdown--is-visible');
+        this.lastElementChild.classList.add('dropdown--not-visible');
+    }
+}

@@ -47,10 +47,6 @@
 
                     a {
                         @include linkItem;
-
-                        &:hover {
-                            color: $link_hover_color
-                        }
                     }
                 }
 
@@ -165,6 +161,45 @@
                 }
             }
         }
+        .header__navigation--mobile{
+            display:flex;
+            position: absolute;
+            top:4.375rem;
+            background: #fff;
+            width: 100%;
+            left: 0;
+            transform: translateY(-30%);
+            opacity:0;
+            z-index:-1;
+            transition: all 0.3s ease-out;
+            .header__navigation-list--mobile{
+                display:flex;
+                flex-direction:column;
+                .header__navigation-item--ticket--mobile{
+                    display: flex;
+                    align-items: center;
+                   > a {
+                        @include linkItemMobile;
+                        width: 7.1875rem;
+                        height: 1.875rem;
+                        line-height: 1.875rem;
+                        background: $link_hover_color;
+                        color: #fff;
+                        font-weight: 700;
+                        font-size:1.2rem;
+                        padding:0 10px;
+                        &:hover {
+                            background: darken($link_hover_color, 10%)
+                        }
+                    }
+                }
+            }
+        }
+        .header__navigation--mobile-open{
+            transform: translateY(0);
+            opacity:1;
+            transition: all 0.3s ease-out;
+        }
         .hamburger__icon{
             width: 40px;
             height: 30px;
@@ -213,8 +248,6 @@
 .why-attend{
     width:100%;
     background: $link_item_hover_color;
-    // z-index:200;
-    // position:relative;
     &__container{
         width:$container_lg;
         margin:0 auto;
@@ -295,8 +328,48 @@
 @media screen and (max-width:1199px){
     .header{
         .header__wrapper{
+            width: $container_lg;
             .header__navigation{
                 display:none;
+            }
+            .header__navigation--mobile{
+                // display:flex;
+                .header__navigation-list--mobile{
+                    width:$container_lg;
+                    padding:0;
+                    margin:0 auto;
+                    list-style: none;
+                    align-items:center;
+                    padding: 50px 0 50px;
+
+                    .header__navigation-item--mobile,
+                    .header__navigation-item--dropdown-mobile{
+                        a{
+                            @include linkItemMobile;
+
+                            &:hover {
+                                color: $link_hover_color
+                            }
+                        }
+                    }
+                    .header__navigation-item--dropdown-mobile{
+                        .header__dropdown--why-attend,
+                        .header__dropdown--agenda{
+                            list-style: none;
+                            padding:0;
+                        }
+                        .dropdown--not-visible{
+                            display:none;
+                        }
+                        .dropdown--is-visible{
+                            display:block;
+                            li a{
+                                font-size:1rem;
+                            }
+
+                        }
+                    }
+                }
             }
             .hamburger__icon{
                 display:flex;
@@ -304,13 +377,7 @@
         }
     }
 }
-@media screen and (max-width:1199px){
-    .header{
-        .header__wrapper{
-            width: $container_lg;
-        }
-    }
-}
+
 @media screen and (max-width:992px){
     .header{
         .header__wrapper{
