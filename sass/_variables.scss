@@ -31,6 +31,21 @@ $hamburger_color:#22b5eb;
     text-align: center;
     cursor:pointer;
 }
+@mixin linkItemMobile {
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    text-transform:uppercase;
+    color:$link_color;
+    font-weight:800;
+    font-size:1.2rem;
+    display: inline-block;
+    height: 2rem;
+    line-height: 2rem;
+    width: 100%;
+    text-align: center;
+    padding-bottom:.875rem;
+    cursor:pointer;
+}
 // FORM COLUMNS
 @mixin formColumnSize{
     margin:0 auto;
